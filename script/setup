@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+cp .env.dev.sample .env.dev
+docker-compose run --rm app rails new . --force --database=mysql --skip-bundle
+cp -f template/database.yml config/database.yml
+docker-compose run --rm app bundle exec spring binstub -all

@@ -1,0 +1,32 @@
+version: '3'
+services:
+  app: &app
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+      args:
+        - APP_HOME=/${APP_NAME}
+    command: ["bundle", "exec", "rails", "s", "-p", "3000", "-b", "0.0.0.0"]
+    env_file: .env.dev
+    depends_on:
+      - db
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/${APP_NAME}
+      - bundle:/${APP_NAME}/vendor/bundle
+  db:
+    image: mysql:5.7
+    ports:
+      - "3306:3306"
+    volumes:
+      - db-data:/var/lib/mysql
+  spring:
+    <<: *app
+    command: ["bundle", "exec", "spring", "server"]
+    ports: []
+volumes:
+  bundle:
+    driver: local
+  db-data:
+    driver: local
