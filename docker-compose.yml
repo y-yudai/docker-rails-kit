@@ -1,6 +1,6 @@
 version: '3'
 services:
-  app: &app
+  app:
     build:
       context: .
       dockerfile: Dockerfile.dev
@@ -14,14 +14,12 @@ services:
       - bundle-install:/usr/local/bundle
   db:
     image: mysql:5.7
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
     ports:
       - "3306:3306"
     volumes:
       - db-data:/var/lib/mysql
-  spring:
-    <<: *app
-    command: ["bundle", "exec", "spring", "server"]
-    ports: []
 volumes:
   bundle-install:
     driver: local
