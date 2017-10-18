@@ -16,9 +16,9 @@ RUN wget https://github.com/progrium/entrykit/releases/download/v${ENTRYKIT_VERS
   && chmod +x /bin/entrykit \
   && entrykit --symlink
 
-ARG APP_HOME
-RUN mkdir -p ${APP_HOME}
+RUN mkdir -p /myapp
+WORKDIR /myapp
 
 ENTRYPOINT [ \
   "prehook", "ruby -v", "--", \
-  "prehook", "bundle install --jobs=4 --path=vendor/bundle", "--"]
+  "prehook", "bundle install --jobs 3", "--"]
