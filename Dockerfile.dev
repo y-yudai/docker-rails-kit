@@ -21,4 +21,4 @@ WORKDIR /myapp
 
 ENTRYPOINT [ \
   "prehook", "ruby -v", "--", \
-  "prehook", "bundle install --jobs 3", "--"]
+  "prehook", "bundle install --jobs 3 --quiet", "--"]
