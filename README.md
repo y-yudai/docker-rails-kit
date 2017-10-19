@@ -1,5 +1,12 @@
 # Docker Rails Kit
 
+* Rails 5.1+
+* Ruby 2.4.2
+* MySQL 5.7+
+* Node.js 6.11+
+* Webpack 3+
+* Vue.js 2+
+
 ## Usage
 
 ### Initialize
@@ -16,9 +23,4 @@ $ script/setup
 $ script/start
 ```
 
-### Spring server
-
-```
-$ docker-compose run --rm spring bash
-root@123456789:/myapp# rails db:migrate
-```
+Open http://localhost:3000.

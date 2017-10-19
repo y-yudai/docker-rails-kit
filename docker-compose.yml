@@ -12,6 +12,7 @@ services:
     volumes:
       - .:/myapp
       - bundle-install:/usr/local/bundle
+      - node_modules:/node_modules
   db:
     image: mysql:5.7
     environment:
@@ -28,4 +29,6 @@ volumes:
   bundle-install:
     driver: local
   db-data:
+    driver: local
+  node_modules:
     driver: local
