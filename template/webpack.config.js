@@ -13,8 +13,6 @@ const entries = glob.sync(`${SRC}/**/*.bundle.js`).reduce((object, file) => {
 const config = {
   entry: entries,
 
-  devtool: IS_DEV ? 'inline-source-map' : '',
-
   output: {
     filename: '[name]',
     path: path.resolve(__dirname, DIST)

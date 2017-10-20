@@ -1,6 +1,6 @@
 version: '3'
 services:
-  app: &app
+  app: &app_base
     build:
       context: .
       dockerfile: Dockerfile.dev
@@ -22,7 +22,7 @@ services:
     volumes:
       - db-data:/var/lib/mysql
   spring:
-    <<: *app
+    <<: *app_base
     command: ["bundle", "exec", "spring", "server"]
     ports: []
 volumes:

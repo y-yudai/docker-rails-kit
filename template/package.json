@@ -5,15 +5,17 @@
     "vue": "^2.5.2"
   },
   "devDependencies": {
+    "autoprefixer": "^7.1.5",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.1",
     "css-loader": "^0.28.7",
     "glob": "^7.1.2",
-    "node-sass": "^4.5.3",
+    "postcss-import": "^11.0.0",
+    "postcss-loader": "^2.0.8",
+    "postcss-nested": "^2.1.2",
     "pug": "^2.0.0-rc.4",
     "pug-loader": "^2.3.0",
-    "sass-loader": "^6.0.6",
     "vue-loader": "^13.3.0",
     "vue-template-compiler": "^2.5.2",
     "webpack": "^3.8.0"
