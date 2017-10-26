@@ -8,7 +8,7 @@ RUN apt-get update -qq \
   && rm -rf /var/cache/apt/archives/* /var/lib/apt/lists/*
 
 # Node.js(LTS)
-RUN curl -sL https://deb.nodesource.com/setup_6.x | bash - \
+RUN curl -sL https://deb.nodesource.com/setup_8.x | bash - \
   && apt-get install -y nodejs
 
 # メインプロセス実行前に複数のコマンド実行をしたいのでprehookを利用する
