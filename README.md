@@ -3,7 +3,7 @@
 * Rails 5.1+
 * Ruby 2.4.2
 * MySQL 5.7+
-* Node.js 6.11+
+* Node.js 8.8+
 * Webpack 3+
 * Vue.js 2+
 
