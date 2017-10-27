@@ -24,3 +24,10 @@ $ script/start
 ```
 
 Open http://localhost:3000.
+
+### Spring server
+
+```
+$ docker-compose run --rm spring bash
+root@123456789:/myapp# rails generate controller home index
+```
